@@ -9,6 +9,8 @@ function Login() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [semail, setSEmail] = useState('');
+    const [spassword, setSPassword] = useState('');
     const [profilePic, setProfilePic] = useState('');
 
     const dispatch = useDispatch();
@@ -18,7 +20,7 @@ function Login() {
             return alert("Please enter full name");
         }
 
-        auth.createUserWithEmailAndPassword(email, password)
+        auth.createUserWithEmailAndPassword(semail, spassword)
         .then((userAuth) => {
             userAuth.user.updateProfile({
                 displayName: name,
@@ -53,16 +55,23 @@ function Login() {
 
     return (
         <div className="login">
-            <img src="https://1000logos.net/wp-content/uploads/2017/03/Linkedin-Logo-500x313.png" alt=""/>
+            <h3>Blinkedin</h3>
 
-            <form>
-                <input value={name} onChange={e => setName(e.target.value)} placeholder="Full name (required if registering)" type="text"/>
-                <input value={profilePic} onChange={e => setProfilePic(e.target.value)} placeholder="Profile pic Url (optional)" type="url" />
-                <input value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" type="email" />
-                <input value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" type="password" />
-                <button type="submit" onClick={loginToApp} >Sign In</button>
-            </form>
-            <p>Not a member <span className="login__register" onClick={register} >Register Now</span></p>
+            <div className="login__container">
+                <form>
+                    <input value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" type="email" />
+                    <input value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" type="password" />
+                    <button type="submit" onClick={loginToApp} >Sign In</button>
+                </form>
+
+                <form>
+                    <input value={name} onChange={e => setName(e.target.value)} placeholder="Full name (required if registering)" type="text"/>
+                    <input value={profilePic} onChange={e => setProfilePic(e.target.value)} placeholder="Profile pic Url (optional)" type="url" />
+                    <input value={semail} onChange={e => setSEmail(e.target.value)} placeholder="Email" type="email" />
+                    <input value={spassword} onChange={e => setSPassword(e.target.value)} placeholder="Password" type="password" />
+                    <button type="submit" onClick={register} >Sign Up</button>
+                </form>
+            </div>
         </div>
     )
 }

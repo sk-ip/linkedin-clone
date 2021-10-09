@@ -15,12 +15,17 @@
 }
 
 .post__info > p {
-    font-size: 12px;
+    font-size: 16px;
     color: gray;
 }
 
 .post__body {
     overflow-wrap: anywhere;
+}
+
+.post__image {
+    width: 100%;
+    height: auto;
 }
 
 .post__buttons {

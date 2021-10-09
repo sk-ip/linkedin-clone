@@ -7,6 +7,11 @@
     cursor: pointer;
 }
 
+.inputOption__top {
+    display: flex;
+    align-items: center;
+}
+
 .inputOption:hover {
     background-color: whitesmoke;
     border-radius: 10px;

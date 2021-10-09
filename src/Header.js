@@ -23,7 +23,7 @@ function Header() {
         <div className="header">
 
             <div className="header__left">
-                <img src="https://image.flaticon.com/icons/png/512/174/174857.png" alt=""/>
+                <h1>BL</h1>
 
                 <div className="header__search">
                     <SearchIcon />
