@@ -16,7 +16,7 @@ import FlipMove from 'react-flip-move';
 function Feed() {
     const [posts, setPosts] =  useState([]);
     const [message, setMessage] = useState('');
-    
+
     const user = useSelector(selectUser);
 
     useEffect(() => {
@@ -34,7 +34,7 @@ function Feed() {
 
     const sendPost = (event) => {
         event.preventDefault();
-        
+
         db.collection("posts").add({
             name: user.displayName,
             description: user.email,
@@ -51,10 +51,10 @@ function Feed() {
             <div className="feed__inputContainer">
                 <div className="feed__input">
                     <CreateIcon />
-                    <form>
-                        <input value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Message" type="text" />   
+                    <div className="feed__inputForm">
+                        <input value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Message" type="text" />
                         <button onClick={sendPost} type="submit">Send</button>
-                    </form>
+                    </div>
                 </div>
                 <div className="feed__inputOptions">
                     <InputOption Icon={ImageIcon} title="Photo" color="#70B5F9"/>

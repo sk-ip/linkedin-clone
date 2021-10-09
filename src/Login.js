@@ -54,7 +54,7 @@ function Login() {
     return (
         <div className="login">
             <img src="https://1000logos.net/wp-content/uploads/2017/03/Linkedin-Logo-500x313.png" alt=""/>
-            
+
             <form>
                 <input value={name} onChange={e => setName(e.target.value)} placeholder="Full name (required if registering)" type="text"/>
                 <input value={profilePic} onChange={e => setProfilePic(e.target.value)} placeholder="Profile pic Url (optional)" type="url" />

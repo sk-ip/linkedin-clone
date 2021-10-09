@@ -12,7 +12,7 @@ import { login, logout } from './features/userSlice';
 import Widgets from './Widgets';
 
 function App() {
-  
+
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
@@ -31,12 +31,11 @@ function App() {
         dispatch(logout());
       }
     })
-  })
+  }, [])
 
   return (
     <div className="app">
       <Header />
-
       {!user ? (
         <Login />
       ) : (
